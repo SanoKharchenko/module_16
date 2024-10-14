@@ -32,7 +32,7 @@ async def update_user(user_id: int
     return f'User {user_id} has been updated'
 
 
-@app.delete('user/{user_id}')
+@app.delete('/user/{user_id}')
 async def delete_user(user_id: Annotated[str, Path(min_length=1, max_length=3,
                                                    description='Enter id user', example='1')]):
     users.pop(user_id)
